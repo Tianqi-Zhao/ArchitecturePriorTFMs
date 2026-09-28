@@ -1,0 +1,111 @@
+{
+  "experiment_id": "experiment_0_pretrained",
+  "schema_version": 1,
+  "artifact_root": "artifacts/experiment_0_pretrained",
+  "run_seed": 0,
+  "transform_repeats": 5,
+  "max_input_features": 1000,
+  "sources": [
+    {
+      "source": "real",
+      "source_id": "openml42",
+      "generator": "openml",
+      "transform": "whole_row_permuted_copy",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {
+        "dataset_ids": [
+          41021, 44956, 44957, 44958, 44959, 44960, 44962, 44963, 44964,
+          44965, 44966, 44967, 44969, 44970, 44971, 44972, 44973, 44974,
+          44975, 44976, 44977, 44978, 44979, 44980, 44981, 44983, 44984,
+          44987, 44989, 44990, 44992, 44993, 44994, 45012, 45402, 196, 230,
+          560, 42370, 44146, 46286, 46292
+        ],
+        "max_rows": 1000,
+        "context_fraction": 0.8,
+        "cache_dir": "",
+        "seed": 0
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_id": "tabdpt_retrieval_off",
+      "options": {
+        "context_size": 0,
+        "context_reduction": "subsample",
+        "n_ensembles": 8,
+        "compile": true,
+        "use_flash": true,
+        "verbose": true,
+        "target_scaling": false
+      }
+    },
+    {
+      "model_id": "tabpfn_v2",
+      "options": {
+        "n_estimators": 8,
+        "preserve_feature_identity": false,
+        "ignore_pretraining_limits": true,
+        "target_scaling": false
+      }
+    },
+    {
+      "model_id": "tabpfn_v2.5",
+      "options": {
+        "n_estimators": 8,
+        "preserve_feature_identity": false,
+        "ignore_pretraining_limits": false,
+        "target_scaling": false
+      }
+    },
+    {
+      "model_id": "tabicl_v2",
+      "options": {
+        "n_estimators": 8,
+        "norm_methods": null,
+        "feat_shuffle_method": "latin",
+        "batch_size": 8,
+        "kv_cache": false,
+        "use_amp": "auto",
+        "use_fa3": "auto",
+        "offload_mode": "auto",
+        "verbose": false,
+        "target_scaling": false
+      }
+    },
+    {
+      "model_id": "tabpfn_v3",
+      "options": {
+        "n_estimators": 8,
+        "preserve_feature_identity": false,
+        "ignore_pretraining_limits": false,
+        "target_scaling": false
+      }
+    }
+  ],
+  "part_i2": {
+    "models": [
+      "tabdpt_retrieval_off",
+      "tabpfn_v2",
+      "tabpfn_v2.5",
+      "tabicl_v2",
+      "tabpfn_v3"
+    ],
+    "default_models": ["tabdpt_retrieval_off", "tabpfn_v2"],
+    "sources": ["real"],
+    "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+    "permutation_method": "independent_query_permutation",
+    "permutation_repeats": 1,
+    "pdp_max_features_per_role": 5,
+    "pdp_grid": {
+      "points": 5,
+      "lower_quantile": 0.05,
+      "upper_quantile": 0.95,
+      "method": "empirical_quantiles",
+      "scope": "paired_feature_reference"
+    },
+    "counterfactual_batch_size": 4,
+    "validate_batch_invariance": true
+  }
+}

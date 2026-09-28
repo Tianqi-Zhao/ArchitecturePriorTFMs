@@ -1,0 +1,128 @@
+{
+  "experiment_id": "experiment_0_tabdpt_versions",
+  "schema_version": 1,
+  "artifact_root": "artifacts/experiment_0_tabdpt_versions",
+  "run_seed": 0,
+  "transform_repeats": 5,
+  "max_input_features": 1000,
+  "sources": [
+    {
+      "source": "synthetic",
+      "source_id": "friedman_n250",
+      "generator": "friedman",
+      "transform": "independent_uniform_0_1",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {"num_tasks": 50, "n_context": 200, "n_query": 50, "relevant_features": 5, "noise_std": 1.0, "seed": 0}
+    },
+    {
+      "source": "synthetic",
+      "source_id": "friedman_n500",
+      "generator": "friedman",
+      "transform": "independent_uniform_0_1",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {"num_tasks": 50, "n_context": 400, "n_query": 100, "relevant_features": 5, "noise_std": 1.0, "seed": 0}
+    },
+    {
+      "source": "synthetic",
+      "source_id": "friedman1",
+      "generator": "friedman",
+      "transform": "independent_uniform_0_1",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {"num_tasks": 50, "n_context": 800, "n_query": 200, "relevant_features": 5, "noise_std": 1.0, "seed": 0}
+    },
+    {
+      "source": "synthetic",
+      "source_id": "friedman_n2000",
+      "generator": "friedman",
+      "transform": "independent_uniform_0_1",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {"num_tasks": 50, "n_context": 1600, "n_query": 400, "relevant_features": 5, "noise_std": 1.0, "seed": 0}
+    },
+    {
+      "source": "synthetic",
+      "source_id": "friedman_noise0p5",
+      "generator": "friedman",
+      "transform": "independent_uniform_0_1",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {"num_tasks": 50, "n_context": 800, "n_query": 200, "relevant_features": 5, "noise_std": 0.5, "seed": 0}
+    },
+    {
+      "source": "synthetic",
+      "source_id": "friedman_noise2",
+      "generator": "friedman",
+      "transform": "independent_uniform_0_1",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {"num_tasks": 50, "n_context": 800, "n_query": 200, "relevant_features": 5, "noise_std": 2.0, "seed": 0}
+    },
+    {
+      "source": "synthetic",
+      "source_id": "friedman_noise4",
+      "generator": "friedman",
+      "transform": "independent_uniform_0_1",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {"num_tasks": 50, "n_context": 800, "n_query": 200, "relevant_features": 5, "noise_std": 4.0, "seed": 0}
+    },
+    {
+      "source": "real",
+      "source_id": "openml42",
+      "generator": "openml",
+      "transform": "whole_row_permuted_copy",
+      "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+      "rounding": "ceil",
+      "parameters": {
+        "dataset_ids": [41021, 44956, 44957, 44958, 44959, 44960, 44962, 44963, 44964, 44965, 44966, 44967, 44969, 44970, 44971, 44972, 44973, 44974, 44975, 44976, 44977, 44978, 44979, 44980, 44981, 44983, 44984, 44987, 44989, 44990, 44992, 44993, 44994, 45012, 45402, 196, 230, 560, 42370, 44146, 46286, 46292],
+        "max_rows": 1000,
+        "context_fraction": 0.8,
+        "cache_dir": "",
+        "seed": 0
+      }
+    }
+  ],
+  "models": [
+    {
+      "model_id": "tabdpt_v1_1_retrieval_off",
+      "options": {"context_size": 0, "context_reduction": "subsample", "feature_reduction": "pca", "n_ensembles": 8, "compile": true, "use_flash": true, "verbose": true, "target_scaling": false}
+    },
+    {
+      "model_id": "tabdpt_v1_0_retrieval_off",
+      "options": {"context_size": 0, "context_reduction": "subsample", "feature_reduction": "pca", "n_ensembles": 1, "compile": true, "use_flash": true, "verbose": true, "target_scaling": false}
+    },
+    {
+      "model_id": "tabdpt_v1_3_retrieval_off",
+      "options": {"context_size": 0, "context_reduction": "subsample", "feature_reduction": "pca", "n_ensembles": 8, "compile": true, "use_flash": true, "verbose": true, "target_scaling": false}
+    }
+  ],
+  "part_i2": {
+    "models": [
+      "tabdpt_v1_1_retrieval_off",
+      "tabdpt_v1_0_retrieval_off",
+      "tabdpt_v1_3_retrieval_off"
+    ],
+    "default_models": [
+      "tabdpt_v1_1_retrieval_off",
+      "tabdpt_v1_0_retrieval_off",
+      "tabdpt_v1_3_retrieval_off"
+    ],
+    "sources": ["synthetic", "real"],
+    "ratios": [0, 0.2, 0.4, 1, 2, 4, 7],
+    "permutation_method": "independent_query_permutation",
+    "permutation_repeats": 1,
+    "pdp_max_features_per_role": 5,
+    "pdp_grid": {
+      "points": 5,
+      "lower_quantile": 0.05,
+      "upper_quantile": 0.95,
+      "method": "empirical_quantiles",
+      "scope": "paired_feature_reference"
+    },
+    "counterfactual_batch_size": 4,
+    "validate_batch_invariance": true
+  }
+}

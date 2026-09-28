@@ -1,0 +1,1 @@
+"""Controlled Bayes dataset generation."""

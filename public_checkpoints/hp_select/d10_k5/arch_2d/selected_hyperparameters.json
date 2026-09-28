@@ -1,0 +1,201 @@
+{
+  "architecture": "2d",
+  "complete": true,
+  "d": 10,
+  "dataset_manifest": "paper/data/d10_k5_seed0/manifest.json",
+  "dataset_manifest_sha256": "421e4dd15498d36ea0727dae565ab58c19f75993a9a89ed7764ce90501630585",
+  "fixed_training_config": {
+    "adam_beta2": 0.95,
+    "batch_size": 32,
+    "early_stopping": true,
+    "early_stopping_activation_drop": 0.0,
+    "early_stopping_activation_relative": true,
+    "early_stopping_baseline_evals": 3,
+    "early_stopping_min_delta": 0.0,
+    "early_stopping_mode": "min",
+    "early_stopping_monitor": "val_loss",
+    "early_stopping_patience": 5,
+    "early_stopping_smoothing": 0.0,
+    "early_stopping_source": "validation",
+    "early_stopping_start_after_steps": 0,
+    "early_stopping_val_fraction": 0.05,
+    "gradient_clip_norm": 1.0,
+    "model_config": {
+      "embedding_size": 96,
+      "mlp_hidden_size": 192,
+      "num_attention_heads": 4,
+      "num_layers": 3
+    },
+    "num_features": 10,
+    "num_steps": 10000,
+    "restore_best_weights": true,
+    "shuffle_features": false,
+    "steps_per_eval": 500,
+    "target_scaling": "none",
+    "task_type": "regression",
+    "val_batch_size": 32,
+    "val_num_batches": 100,
+    "weight_decay": 0.0
+  },
+  "k": 5,
+  "metric": "mse",
+  "mode": "min",
+  "model_config": {
+    "embedding_size": 96,
+    "mlp_hidden_size": 192,
+    "num_attention_heads": 4,
+    "num_layers": 3,
+    "num_outputs": 1
+  },
+  "schema_version": 1,
+  "selected_hyperparameters": {
+    "architecture": "2d",
+    "learning_rate": 0.001,
+    "model_config": {
+      "embedding_size": 96,
+      "mlp_hidden_size": 192,
+      "num_attention_heads": 4,
+      "num_layers": 3,
+      "num_outputs": 1
+    },
+    "optimizer": "schedulefree-adamw"
+  },
+  "selection_evidence": {
+    "candidate_count": 4,
+    "candidates": [
+      {
+        "checkpoint_paths": [
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.0005/seed_0/checkpoint.pt",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.0005/seed_1/checkpoint.pt",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.0005/seed_2/checkpoint.pt"
+        ],
+        "checkpoint_sha256": [
+          "0e954b5765512036f4209bd3f36ca914d3b189af9e34132dedbbbb1d3991796d",
+          "f528ec64e8fb59999851d2c31773a2f1ec6ef31c75964fe161ea114a9104582a",
+          "8fa80b21917e593ad0936f614413c6c42e716e37feebbbf6e741eead03e286f0"
+        ],
+        "evaluation_files": [
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.0005/seed_0/evaluation/metrics.json",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.0005/seed_1/evaluation/metrics.json",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.0005/seed_2/evaluation/metrics.json"
+        ],
+        "learning_rate": 0.0005,
+        "metric_mean": 2.464093028696564,
+        "metric_std": 5.468124959301769e-05,
+        "metric_values": [
+          2.464038193522269,
+          2.464147554710484,
+          2.464093337856939
+        ],
+        "optimizer": "schedulefree-adamw",
+        "training_seeds": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "checkpoint_paths": [
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.001/seed_0/checkpoint.pt",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.001/seed_1/checkpoint.pt",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.001/seed_2/checkpoint.pt"
+        ],
+        "checkpoint_sha256": [
+          "aab19c568c2686a47ae93e05195f4ae4da080e3ed2b20caf04a8f94fde4a2719",
+          "d3b416094e3f8a55f801fbaf2473d66e503f51a9e2056c78551f2bb765975e0c",
+          "e8d59cf5e5cd441d081a22c88ca2a453523b70f9c6dada08d4c51abc85414970"
+        ],
+        "evaluation_files": [
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.001/seed_0/evaluation/metrics.json",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.001/seed_1/evaluation/metrics.json",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.001/seed_2/evaluation/metrics.json"
+        ],
+        "learning_rate": 0.001,
+        "metric_mean": 2.4636390578646377,
+        "metric_std": 0.0003263407836168989,
+        "metric_values": [
+          2.463290083459235,
+          2.463690415236136,
+          2.463936674898542
+        ],
+        "optimizer": "schedulefree-adamw",
+        "training_seeds": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "checkpoint_paths": [
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.002/seed_0/checkpoint.pt",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.002/seed_1/checkpoint.pt",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.002/seed_2/checkpoint.pt"
+        ],
+        "checkpoint_sha256": [
+          "4971cfd713d38beed6564648c8d194e682055c5cb17b9c2673b24ccf4fcc8c2a",
+          "85d2f4fe01f4c07effe8e74883dddc41af696051daa60c3593fd06f6a1b77b3c",
+          "6edeb260d05bdc4b7c84e280df436444b8c17a1df91cfc2c684f969395389c2a"
+        ],
+        "evaluation_files": [
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.002/seed_0/evaluation/metrics.json",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.002/seed_1/evaluation/metrics.json",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.002/seed_2/evaluation/metrics.json"
+        ],
+        "learning_rate": 0.002,
+        "metric_mean": 2.463659579946256,
+        "metric_std": 0.0002773235072404166,
+        "metric_values": [
+          2.4636289424858817,
+          2.4633988473457378,
+          2.4639509500071495
+        ],
+        "optimizer": "schedulefree-adamw",
+        "training_seeds": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "checkpoint_paths": [
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.004/seed_0/checkpoint.pt",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.004/seed_1/checkpoint.pt",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.004/seed_2/checkpoint.pt"
+        ],
+        "checkpoint_sha256": [
+          "c3c13ba20afbfbed8b8bf09b8a0a85f40af0049b8faa449cd0fd0b65e732b08d",
+          "8204d930dc5f13c1453b20afc6fc7fa6ee6d9f1b1c605e67b23a21df07213ac2",
+          "1c5dea051921d8f4f1fc7801d7bd6af7f1f428dc53ca39e436ff7a1b050d495e"
+        ],
+        "evaluation_files": [
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.004/seed_0/evaluation/metrics.json",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.004/seed_1/evaluation/metrics.json",
+          "paper/hp_select/d10_k5/arch_2d/schedulefree-adamw/lr_0.004/seed_2/evaluation/metrics.json"
+        ],
+        "learning_rate": 0.004,
+        "metric_mean": 2.983145754356444,
+        "metric_std": 0.44806926651281087,
+        "metric_values": [
+          2.4657605472657393,
+          3.2425298823845274,
+          3.2411468334190636
+        ],
+        "optimizer": "schedulefree-adamw",
+        "training_seeds": [
+          0,
+          1,
+          2
+        ]
+      }
+    ],
+    "run_count": 12,
+    "selected_metric_mean": 2.4636390578646377,
+    "selected_metric_std": 0.0003263407836168989,
+    "tie_break": "learning_rate_then_optimizer"
+  },
+  "training_seeds": [
+    0,
+    1,
+    2
+  ]
+}

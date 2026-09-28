@@ -1,0 +1,253 @@
+{
+  "command_arguments": {
+    "d": 10,
+    "generator_batch_size": 32,
+    "k": 10,
+    "n_context_max": 100,
+    "n_context_min": 50,
+    "n_total": 150,
+    "noise_std": 1.5,
+    "output_dir": "paper/data/d10_k10_seed1",
+    "seed": 1,
+    "signal_energy": 1.0,
+    "test_tasks": 32000,
+    "train_tasks": 320000,
+    "validation_tasks": 3200
+  },
+  "complete": true,
+  "distribution": {
+    "coefficient_prior": "centered_gaussian_on_support",
+    "coefficient_variance": 0.1,
+    "context_design": "orthogonal_gaussian_qr",
+    "context_length_prior": "discrete_uniform_inclusive_per_generator_batch",
+    "d": 10,
+    "expected_coefficient_covariance_diagonal": 0.1,
+    "expected_signal_energy": 1.0,
+    "generator_batch_size": 32,
+    "k": 10,
+    "label_noise": "gaussian_iid",
+    "n_context_range": [
+      50,
+      100
+    ],
+    "n_total": 150,
+    "noise_std": 1.5,
+    "noise_variance": 2.25,
+    "query_design": "standard_normal_iid",
+    "support_prior": "uniform_fixed_k"
+  },
+  "generator": "fixed_k_orthogonal_linear_regression",
+  "schema_version": 1,
+  "splits": {
+    "test": {
+      "datasets": {
+        "X": {
+          "dtype": "float32",
+          "shape": [
+            32000,
+            150,
+            10
+          ]
+        },
+        "beta": {
+          "dtype": "float32",
+          "shape": [
+            32000,
+            10
+          ]
+        },
+        "max_num_classes": {
+          "dtype": "int32",
+          "shape": [
+            1
+          ]
+        },
+        "num_datapoints": {
+          "dtype": "int32",
+          "shape": [
+            32000
+          ]
+        },
+        "num_features": {
+          "dtype": "int32",
+          "shape": [
+            32000
+          ]
+        },
+        "single_eval_pos": {
+          "dtype": "int32",
+          "shape": [
+            32000
+          ]
+        },
+        "support_mask": {
+          "dtype": "uint8",
+          "shape": [
+            32000,
+            10
+          ]
+        },
+        "task_id": {
+          "dtype": "int64",
+          "shape": [
+            32000
+          ]
+        },
+        "y": {
+          "dtype": "float32",
+          "shape": [
+            32000,
+            150
+          ]
+        }
+      },
+      "path": "test.h5",
+      "rows": 32000,
+      "sha256": "e6d49bfb9ef09873e88aa7533553d42546af6560b648060406fb5a43291606ba",
+      "task_id_range": [
+        323200,
+        355200
+      ]
+    },
+    "train": {
+      "datasets": {
+        "X": {
+          "dtype": "float32",
+          "shape": [
+            320000,
+            150,
+            10
+          ]
+        },
+        "beta": {
+          "dtype": "float32",
+          "shape": [
+            320000,
+            10
+          ]
+        },
+        "max_num_classes": {
+          "dtype": "int32",
+          "shape": [
+            1
+          ]
+        },
+        "num_datapoints": {
+          "dtype": "int32",
+          "shape": [
+            320000
+          ]
+        },
+        "num_features": {
+          "dtype": "int32",
+          "shape": [
+            320000
+          ]
+        },
+        "single_eval_pos": {
+          "dtype": "int32",
+          "shape": [
+            320000
+          ]
+        },
+        "support_mask": {
+          "dtype": "uint8",
+          "shape": [
+            320000,
+            10
+          ]
+        },
+        "task_id": {
+          "dtype": "int64",
+          "shape": [
+            320000
+          ]
+        },
+        "y": {
+          "dtype": "float32",
+          "shape": [
+            320000,
+            150
+          ]
+        }
+      },
+      "path": "train.h5",
+      "rows": 320000,
+      "sha256": "065b421cc2c25ecbff78500cc0480828f543f6b8e1ee689d6ba7789b8291facb",
+      "task_id_range": [
+        0,
+        320000
+      ]
+    },
+    "validation": {
+      "datasets": {
+        "X": {
+          "dtype": "float32",
+          "shape": [
+            3200,
+            150,
+            10
+          ]
+        },
+        "beta": {
+          "dtype": "float32",
+          "shape": [
+            3200,
+            10
+          ]
+        },
+        "max_num_classes": {
+          "dtype": "int32",
+          "shape": [
+            1
+          ]
+        },
+        "num_datapoints": {
+          "dtype": "int32",
+          "shape": [
+            3200
+          ]
+        },
+        "num_features": {
+          "dtype": "int32",
+          "shape": [
+            3200
+          ]
+        },
+        "single_eval_pos": {
+          "dtype": "int32",
+          "shape": [
+            3200
+          ]
+        },
+        "support_mask": {
+          "dtype": "uint8",
+          "shape": [
+            3200,
+            10
+          ]
+        },
+        "task_id": {
+          "dtype": "int64",
+          "shape": [
+            3200
+          ]
+        },
+        "y": {
+          "dtype": "float32",
+          "shape": [
+            3200,
+            150
+          ]
+        }
+      },
+      "path": "validation.h5",
+      "rows": 3200,
+      "sha256": "8204ad5c7cba06b9a608bff1af748ae7b27fbeafbeefa5796f8b405bbd1533c9",
+      "task_id_range": [
+        320000,
+        323200
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# Python 3.10+; install the CUDA-compatible PyTorch build for GPU runs.
+torch==2.7.1
+tensorboard==2.21.0
+numpy==2.2.6
+pandas==2.3.3
+h5py==3.16.0
+scikit-learn==1.7.2
+openml==0.15.1
+matplotlib==3.10.8
+tabpfn==8.0.8
+tabicl==2.1.1
+tabdpt==1.2.0
+schedulefree>=1.4,<2
